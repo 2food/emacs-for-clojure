@@ -26,6 +26,11 @@
             (define-clojure-indent (facts 1))
             (rainbow-delimiters-mode)))
 
+
+;; rebind transpose-sexp to key used for transpose-char (who uses that anyway?)
+(define-key clojure-mode-map (kbd "C-t") 'transpose-sexps)
+
+
 ;;;;
 ;; Cider
 ;;;;
