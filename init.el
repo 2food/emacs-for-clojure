@@ -73,7 +73,10 @@
     tagedit
 
     ;; git integration
-    magit))
+    magit
+
+    ;; autocomplete
+    company))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -134,6 +137,9 @@
 ;; For editing lisps
 (load "elisp-editing.el")
 
+;; Enable auto-complete globally
+(add-hook 'after-init-hook 'global-company-mode)
+
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
@@ -152,3 +158,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+;; Disable newbie-restricitons
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
